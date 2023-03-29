@@ -37,7 +37,7 @@
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="reg_page">
       <layout class="QGridLayout" name="gridLayout_3">
@@ -47,7 +47,7 @@
        <item row="3" column="1">
         <widget class="QLabel" name="label_7">
          <property name="text">
-          <string>password：</string>
+          <string>password： </string>
          </property>
         </widget>
        </item>
@@ -70,7 +70,7 @@
        <item row="1" column="1">
         <widget class="QLabel" name="label_5">
          <property name="text">
-          <string>username:</string>
+          <string>user name: </string>
          </property>
         </widget>
        </item>
@@ -90,7 +90,7 @@
        <item row="2" column="1">
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>password:</string>
+          <string>password: </string>
          </property>
         </widget>
        </item>
@@ -186,7 +186,7 @@
        <item row="1" column="1">
         <widget class="QLabel" name="label_3">
          <property name="text">
-          <string>username</string>
+          <string>username： </string>
          </property>
         </widget>
        </item>
@@ -213,7 +213,7 @@
        <item row="2" column="1">
         <widget class="QLabel" name="label_4">
          <property name="text">
-          <string>password</string>
+          <string>password： </string>
          </property>
         </widget>
        </item>
@@ -227,7 +227,7 @@
        <item row="1" column="1">
         <widget class="QLabel" name="label_8">
          <property name="text">
-          <string>server IP</string>
+          <string>server IP： </string>
          </property>
         </widget>
        </item>
@@ -237,7 +237,7 @@
        <item row="3" column="2">
         <widget class="QPushButton" name="pushButton_4">
          <property name="text">
-          <string>set server</string>
+          <string>SET server</string>
          </property>
         </widget>
        </item>
@@ -270,7 +270,7 @@
        <item row="2" column="1">
         <widget class="QLabel" name="label_9">
          <property name="text">
-          <string>port</string>
+          <string>port： </string>
          </property>
         </widget>
        </item>

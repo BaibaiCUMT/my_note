@@ -2,6 +2,15 @@
 #include "ui_login.h"
 #include <QPainter>
 #include <QToolButton>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
+#include <QFile>
+#include <QDebug>
+
+
+#define USER_REG        "^[a-zA-Z0-9]{2,16}$"
+#define USER_PWD        "^[a-zA-Z0-9]{2,16}$"
 
 Login::Login(QWidget *parent) :
     QWidget(parent),
@@ -51,6 +60,48 @@ Login::Login(QWidget *parent) :
     {
         ui->stackedWidget->setCurrentWidget(ui->reg_page);
     });
+
+
+//    写Json
+{
+//    QJsonObject obj;
+
+//    QJsonObject sub;
+//    sub.insert("ip",QJsonValue("192.168.0.1"));
+//    sub.insert("port","9999");
+
+//    obj.insert("server",QJsonValue(sub));
+
+//    QJsonDocument doc(obj);
+//    QByteArray data = doc.toJson();
+
+//    QFile file("temp.json");
+//    file.open(QIODevice::WriteOnly);
+//    file.write(data);
+//    file.close();
+}
+
+//    读Json
+{
+//    QFile file("temp.json");
+//    file.open(QIODevice::ReadOnly);
+//    QByteArray data = file.readAll();
+//    file.close();
+
+//    QJsonDocument doc = QJsonDocument::fromJson(data);
+//    if(doc.isObject())
+//    {
+//           QJsonObject obj = doc.object();
+//           QJsonValue value = obj.value("server");
+//           if(value.isObject())
+//           {
+//               QJsonObject subobj = value.toObject();
+//               QString ip = subobj.value("ip").toString();
+//               QString port = subobj.value("port").toString();
+//               qDebug() << ip << port;
+//           }
+//    }
+}
 }
 
 Login::~Login()

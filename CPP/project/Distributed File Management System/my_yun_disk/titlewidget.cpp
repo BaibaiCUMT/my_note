@@ -3,6 +3,7 @@
 #include <QMouseEvent>
 #include <QToolButton>
 
+
 TitleWidget::TitleWidget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::TitleWidget)

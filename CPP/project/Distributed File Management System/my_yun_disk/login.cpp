@@ -14,14 +14,14 @@
 
 #include <QCryptographicHash>
 
-#define USER_REG        "^[a-zA-Z0-9]{2,16}$"
-#define USER_PWD        "^[a-zA-Z0-9]{2,16}$"
+#include <QMessageBox>
 
 Login::Login(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Login)
 {
     ui->setupUi(this);
+    //设置首个页面
     ui->stackedWidget->setCurrentWidget(ui->login_page);
     //去边框
     this->setWindowFlags(Qt::FramelessWindowHint | windowFlags());
@@ -169,3 +169,72 @@ void Login::paintEvent(QPaintEvent *event)
 
 
 }
+
+void Login::on_reg_regButton_clicked()
+{
+
+}
+
+//服务器设置
+void Login::on_set_setButton_clicked()
+{
+    //获取：
+    QString ip = ui->address->text();
+    QString port = ui->port->text();
+
+    //校验：
+    QRegExp exp(IP_REG);
+    if (!exp.exactMatch(ip))
+    {
+        QMessageBox::warning(this,"warning!", "ip error!");
+        ui->address->clear();
+        //设置焦点
+        ui->address->setFocus();
+        return;
+    }
+
+    exp.setPattern(PORT_REG);
+    if (!exp.exactMatch(port))
+    {
+        QMessageBox::warning(this,"warning","port error");
+        ui->port->clear();
+        ui->address->setFocus();
+        return;
+    }
+
+    //保存到配置文件
+
+    //准备发送的数据
+
+}
+
+//保存到配置文件
+void Login::saveWebInfo(QString ip, QString port, QString path)
+{
+    //读文件
+    QFile file(path);
+    bool bl = file.open(QFile::ReadOnly);
+    if (bl == false)
+    {
+        std::cout << "fail to open conf file" << '\n';
+        return;
+    }
+    QByteArray data = file.readAll();
+    //
+    QJsonDocument doc = QJsonDocument::fromJson(data);
+    if(!doc.isObject())
+    {
+        return;
+    }
+    QJsonObject obj = doc.object();
+    QJsonObject loginobj = obj.value("login");
+    QJsonValue user = loginobj.value("user");
+    QJsonValue pwd = loginobj.value("pwd");
+
+    QJsonObject pathobj = obj.value("path");
+
+    QMap<QString, QVariant> webInfo;
+    webInfo.insert("ip", ip);
+    webInfo.insert("port", port);
+}
+

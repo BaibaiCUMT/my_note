@@ -37,7 +37,7 @@
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>2</number>
      </property>
      <widget class="QWidget" name="reg_page">
       <layout class="QGridLayout" name="gridLayout_3">
@@ -124,7 +124,7 @@
         </spacer>
        </item>
        <item row="4" column="2">
-        <widget class="QPushButton" name="pushButton_3">
+        <widget class="QPushButton" name="reg_regButton">
          <property name="text">
           <string>REGISTER</string>
          </property>
@@ -232,10 +232,10 @@
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QLineEdit" name="lineEdit_7"/>
+        <widget class="QLineEdit" name="port"/>
        </item>
        <item row="3" column="2">
-        <widget class="QPushButton" name="pushButton_4">
+        <widget class="QPushButton" name="set_setButton">
          <property name="text">
           <string>SET server</string>
          </property>
@@ -275,7 +275,7 @@
         </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QLineEdit" name="lineEdit_6"/>
+        <widget class="QLineEdit" name="address"/>
        </item>
        <item row="1" column="0">
         <spacer name="horizontalSpacer_6">

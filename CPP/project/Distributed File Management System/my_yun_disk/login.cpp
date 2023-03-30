@@ -8,6 +8,11 @@
 #include <QFile>
 #include <QDebug>
 
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+
+#include <QCryptographicHash>
 
 #define USER_REG        "^[a-zA-Z0-9]{2,16}$"
 #define USER_PWD        "^[a-zA-Z0-9]{2,16}$"
@@ -17,7 +22,7 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
-
+    ui->stackedWidget->setCurrentWidget(ui->login_page);
     //去边框
     this->setWindowFlags(Qt::FramelessWindowHint | windowFlags());
 
@@ -80,7 +85,6 @@ Login::Login(QWidget *parent) :
 //    file.write(data);
 //    file.close();
 }
-
 //    读Json
 {
 //    QFile file("temp.json");
@@ -102,6 +106,53 @@ Login::Login(QWidget *parent) :
 //           }
 //    }
 }
+
+//    发送和接受http请求
+    {
+//        QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+
+//        QNetworkRequest res;
+//        res.setHeader(QNetworkRequest::UserAgentHeader,
+//                      "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/111.0.0.0 Safari/537.36 Edg/111.0.1661.54");
+//        res.setUrl(QUrl("http://www.baidu.com:80"));
+
+//        QNetworkReply *reply = manager->post(res,"");
+
+//        connect(reply, &QNetworkReply::readyRead, this, [=]()
+//        {
+//            QVariant str = reply->header(QNetworkRequest::LocationHeader);
+//            QByteArray data = reply->readAll();
+//            qDebug() << data;
+//            qDebug() << str.toString();
+//        });
+    }
+
+//    MD5加密
+    {
+//        QByteArray data = "hello world";
+//        QCryptographicHash hash(QCryptographicHash::Md5);
+//        hash.addData(data);
+//        hash.addData("nihao");
+
+//        QByteArray arry = hash.result();
+//        qDebug() << arry;
+//        arry = arry.toHex();
+//        qDebug() << arry;
+
+//        QByteArray arry2 = QCryptographicHash::hash(data,QCryptographicHash::Md5).toHex();
+//        qDebug() << arry2;
+    }
+
+//    base64编码
+    {
+//        QByteArray base = "hello world";
+//        base = base.toBase64();
+//        qDebug() << base;
+
+//        base = QByteArray::fromBase64(base);
+//        qDebug() << base;
+    }
+
 }
 
 Login::~Login()
